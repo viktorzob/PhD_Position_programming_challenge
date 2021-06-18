@@ -1,3 +1,8 @@
+import os, sys
+path = os.path.dirname(os.path.realpath('__file__'))
+os.chdir(path)
+sys.path.append(os.path.dirname(path))
+
 import matplotlib.pyplot as plt
 import numpy as np
 

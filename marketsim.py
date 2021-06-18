@@ -4,16 +4,9 @@ Created on Mon Jun 14 09:00:25 2021
 
 @author: Viktor
 """
-import os, sys
-path = os.path.dirname(os.path.realpath('__file__'))
-os.chdir(path)
-sys.path.append(os.path.dirname(path))
-
 import pandas as pd
 import numpy as np
 import numpy_groupies as npg
-
-from numpy_groupies import aggregate_numpy as anp
 
 
 class MarketSim():
