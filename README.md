@@ -7,8 +7,9 @@ Written for a sumbisson to a PhD_Position programming challenge. Simulates a sim
 Simulation is called by *MarketSim(fin='data/input_dummy.csv', fout='data/output_dummy.csv')*:
 
 - Takes as input a .csv-file includig the variables: time, demand, hydro_avil., wind_avail., solar_avail.;
-- Attention: if one of those variable names isn't included, the code will not run! An exmaple is deilverd in data/input_dummy.csv
 - Outputs again a .csv-file containing 'time', 'system cost', 'marginal price' and the profit of all agents
+
+- Attention: if one of those variable names isn't included, the code will not run! An exmaple is deilverd in data/input_dummy.csv
 
 Agents get initalized by *MarketSim.add_agent(uid, tech, cap, var_cost, storage)*:
 
@@ -27,6 +28,8 @@ The Simulation gets executed by *MarketSim.run(gas_efficiency, storage_efficienc
 - Offered capacities for 'hydro', 'wind' and 'solar' are equal their initalized capacities times their individual availability from the .csv-input file.
 - 'storage' always offers its available capacity/96 times storage_efficiency
 - 'gas' always offers its capacity times gas_efficiency and gets an additional penalty induced by CO2 emissions
+
+- Attention: before calling *MarketSim.run()* another time, execute *MarketSim(fin='data/input_dummy.csv', fout='data/output_dummy.csv')* again to reset the model.
 
 
 Other functions included in class *MarketSim*:
