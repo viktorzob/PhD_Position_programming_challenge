@@ -123,7 +123,7 @@ class MarketSim():
             market_price, bids, quantities = self.market_clearing(demand,np.c_[adjcap_agents, adjcap_agents[:,2]])
 
             # storage-agent buys capacity
-            bought_cap_storage = np.clip(np.sum(quantities) - self.input_data[step,market_demand], 0, demand_storage) * storage_efficiency ## - unsold_cap_storage) # wahrscheinlich raus !!!!!!!            
+            bought_cap_storage = np.clip(np.sum(quantities) - self.input_data[step,market_demand], 0, demand_storage) * storage_efficiency            
             self.SoC = np.clip(self.SoC + bought_cap_storage - quantities[storage_row], 0, max_storage_storage)
             
             # to ensure that now unessecary volumes get paid
